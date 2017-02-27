@@ -1,4 +1,4 @@
-/*html,
+html,
 body,
 ul,
 li {
@@ -6,33 +6,66 @@ li {
 }
 
 body {
-    background: #FCD424; font: normal 16px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
-}*/
-body {
     background-color: rebeccapurple;
 }
+div {
+    text-align: center;
+}
 /*#viewport {
-    width: 500px; height: 500px; background: #C7433E; border: 10px solid #ED5D52; margin: 100px auto 0; position: relative;
-}
+    background-color: antiquewhite;
+    margin: 50px auto 0px;
+    position: relative; 
+    height: 600px;
+    width: 500px;
+    border: 1px darkgrey solid;
+    border-radius: 400px
 
-#viewport .stack {
-    width: 200px; height: 300px; background: #ED5D52; position: absolute; top: 100px; left: 50%; margin-left: -100px; border-radius: 10px;
-}
-
-#viewport li {
-    width: 200px; height: 300px; list-style: none; background: #fff; border-radius: 5px; position: absolute; top: 0; left: 0; box-shadow: 0 0 2px rgba(0,0,0,.2), 1px 1px 1px rgba(0,0,0,.2); line-height: 300px; text-align: center; font-size: 100px; border: 10px solid #ECECEC; box-sizing: border-box; cursor: default;
 }*/
 
-#viewport {
-    background-color: orange;
-    margin: 100px auto 0px;
-    position: relative; 
-    height: 500px;
-    width: 500px;
-    border: 10px teal dotted;
-    border-radius: 300px PLATE
 
+.plate {
+  /*display: inline-block;*/
+  width: 650px;
+  height: 650px;
+  background: white;
+  margin: 50px auto 0px;
 }
+
+/* Plate Styling */
+.plate {
+  $plate-edge: 33px;
+  position: relative;
+  box-sizing: border-box;
+  padding: $plate-edge ($plate-edge + 20);
+  border-radius: 400px;
+  box-shadow: 
+    /* Outer Plate Bevel */
+    inset 0 5px 3px 0 rgba(255,255,255,.5), /* Top */
+    inset 0 -5px 3px 0 rgba(0,0,0,.78), /* Bottom */
+    inset 3px 0 2px 0 rgba(0,0,0,.25), /* Left */
+    inset -3px 0 2px 0 rgba(0,0,0,.25), /* Right */
+    
+    /* Outer Plate Shadow */
+    inset 0 5px 46px 0 rgba(0,0,0,.4),
+    0 5px 13px 0 rgba(0,0,0,.75)
+    ;
+}
+
+before {
+    background-color: red
+    display: block;
+    position: absolute;*/
+    top: $plate-edge;
+    right: $plate-edge;
+    bottom: $plate-edge;
+    left: $plate-edge;
+    border-radius: 20px;
+    box-shadow:
+      /* Inner Plate Shadow 
+      inset 0 0 4px 3px rgba(255,255,255,1), /* Top */
+      inset 0 8px 16px 4px rgba(0,0,0,.25) /* Top */
+      ;
+  }
 
 #viewport .stack {
     width: 200px;
