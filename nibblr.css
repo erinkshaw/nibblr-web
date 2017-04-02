@@ -5,83 +5,86 @@ li {
     margin: 0; padding: 0;
 }
 
+/* make tablecloth background */
 body {
-    background-color: rebeccapurple;
+    background: white;
+    background-image: linear-gradient(90deg, rgba(200,0,0, .40) 50%, transparent 0), 
+    linear-gradient(rgba(200,0,0,.40) 50%, transparent 0);
+    background-size: 40px 40px;    
 }
-div {
-    text-align: center;
-}
-/*#viewport {
-    background-color: antiquewhite;
-    margin: 50px auto 0px;
-    position: relative; 
-    height: 600px;
-    width: 500px;
-    border: 1px darkgrey solid;
-    border-radius: 400px
 
-}*/
-
-
+/* make the plate */
 .plate {
-  /*display: inline-block;*/
-  width: 650px;
-  height: 650px;
-  background: white;
-  margin: 50px auto 0px;
-}
+    background: white;
+    background-position: 50% 0%;
+    width: 650px;
+    height: 650px;
+    margin: 100px auto 0px;
 
-/* Plate Styling */
-.plate {
-  $plate-edge: 33px;
-  position: relative;
-  box-sizing: border-box;
-  padding: $plate-edge ($plate-edge + 20);
-  border-radius: 400px;
-  box-shadow: 
-    /* Outer Plate Bevel */
-    inset 0 5px 3px 0 rgba(255,255,255,.5), /* Top */
-    inset 0 -5px 3px 0 rgba(0,0,0,.78), /* Bottom */
-    inset 3px 0 2px 0 rgba(0,0,0,.25), /* Left */
-    inset -3px 0 2px 0 rgba(0,0,0,.25), /* Right */
-    
-    /* Outer Plate Shadow */
-    inset 0 5px 46px 0 rgba(0,0,0,.4),
-    0 5px 13px 0 rgba(0,0,0,.75)
-    ;
+    /* Plate Styling */
+    position: relative;
+    box-sizing: border-box;
+    padding: 33px (33px + 20);
+    border-radius: 400px;
+    box-shadow: 
+      /* Outer Plate Bevel */
+      inset 0 5px 3px 0 rgba(255,255,255,.5), /* Top */
+      inset 0 -5px 3px 0 rgba(0,0,0,.78), /* Bottom */
+      inset 3px 0 2px 0 rgba(0,0,0,.25), /* Left */
+      inset -3px 0 2px 0 rgba(0,0,0,.25), /* Right */
+      
+      /* Outer Plate Shadow */
+      inset 0 5px 46px 0 rgba(0,0,0,.4),
+      0 5px 13px 0 rgba(0,0,0,.75);
 }
-
-before {
-    background-color: red
+  .plate::before {
+    content: ' ';
     display: block;
-    position: absolute;*/
-    top: $plate-edge;
-    right: $plate-edge;
-    bottom: $plate-edge;
-    left: $plate-edge;
-    border-radius: 20px;
+    position: absolute;
+    top: 110px;
+    right: 110px;
+    bottom: 110px;
+    left: 110px;
+    border-radius: 400px;
     box-shadow:
-      /* Inner Plate Shadow 
+    /* Inner Plate Shadow */
       inset 0 0 4px 3px rgba(255,255,255,1), /* Top */
       inset 0 8px 16px 4px rgba(0,0,0,.25) /* Top */
       ;
   }
 
-#viewport .stack {
-    width: 200px;
-    height: 300px;
-    top: 100px;
+/* place nibblr logo */
+
+@font-face {
+    font-family: NoodleScript;
+    src: url("./font/nooshade.ttf");
+}
+
+.plate::after {
+    content: "Nibblr.";
+    font-family: NoodleScript;
     position: absolute;
-    left: 50%; 
+    top: 30px;
+    left: 200px;
+    font-size: 90px;
+    color: rgba(0,0,0,.75);
+}
+
+/* position card stack */
+#viewport .stack {
+    width: 275px;
+    height: 275px;
+    top: 185px;
+    position: absolute;
+    left: 44%; 
     margin-left: -100px; 
     border-radius: 10px;
 }
 
+/* style cards */
 #viewport li {
-    background-color: lawngreen;
-    border: 1px solid black;
-    width: 200px; 
-    height: 300px;
+    width: 275px; 
+    height: 275px;
     list-style: none; 
     border-radius: 5px;
     position: absolute;
@@ -90,17 +93,19 @@ before {
     box-shadow: 0 0 2px rgba(0,0,0,.2), 1px 1px 1px rgba(0,0,0,.2);
 }
 
+/* Rotate cards */
 #viewport li.in-deck:nth-child(2) {
     top: 4px; transform: translate(-4px, -2px) rotate(-1deg);
 }
-/*TODO: google how this works */
+
 #viewport li.in-deck:nth-child(3) {
     top: 2px; transform: translate(2px, 2px) rotate(0.4deg);
 }
 
+/* card img styling */
 img {
-    width: 190px;
-    height: 290px;
+    width: 275px;
+    height: 275px;
     margin: auto auto;
     position: absolute;
     top: 5px;
